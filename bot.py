@@ -7,7 +7,11 @@ from dotenv import load_dotenv
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 
-client = discord.Client()
+# Create Intents
+intents = discord.Intents.default()
+intents.all()
+
+client = discord.Client(intents=intents)
 
 @client.event
 async def on_ready():
